@@ -20,6 +20,7 @@ var initTypeListBox = function () {
 
 var initPlayList = function(e)
 {
+	e.view.scroller.reset();
 	//console.log(e.view);
 	if(e.view.params.id!==undefined)
 	{

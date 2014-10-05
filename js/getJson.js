@@ -64,7 +64,7 @@ musicP.changeNowList = function(typeId)
 };
 musicP.changeNowPlay = function(playNo)
 {
-	if(this.nowListId != playNo)
+	if(this.nowPlayNo != playNo)
 	{
 		this.nowPlayNo = playNo;
 		$("#lyric").text(musicP.playList[this.nowListId][playNo].lyric);
