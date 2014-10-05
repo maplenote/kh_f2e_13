@@ -1,0 +1,20 @@
+
+.km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+.km-back-button:before, .km-back-button:after  { content: "\e013"; }
+.km-play-button:before, .km-play-button:after  { content: "\e000"; }
+.alignCenter
+{
+	text-align: center;
+}
+pre
+{
+	font-size:1.5em;
+	padding: 1em;
+}
+#playLink
+{
+	height:80px;
+	width:100%;
+	border:none;
+	display: none;
+}

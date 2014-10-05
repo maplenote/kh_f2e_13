@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高雄前端社群 #13</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" href="css/kendo.black.mobile.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/kendo.all.min.js"></script>
+</head>
+<body>
+<!--  index  -->
+<div data-role="view" id="layoutIndex" data-init="initTypeListBox">
+	<header data-role="header">
+    <div data-role="navbar">
+      <span data-role="view-title">高雄前端社群 #13</span>
+    </div>
+  </header>
+  <ul data-role="listview" data-type="group">
+  	<li>資料來源
+    	<ul>
+    		<li><a href="http://unlimited.kptaipei.tw/" data-rel="external">柯P野生官網 API</a></li>
+    		<li><a href="https://soundcloud.com/" data-rel="external">SoundCloud</a></li>
+    	</ul>
+  	</li>
+  </ul>
+  <ul data-role="listview" data-type="group">
+  <li>歌單
+    <ul class="typeListBox">
+    </ul>
+  </li>
+  </ul>
+</div>
+<!-- drawer nav -->
+<div data-role="drawer" id="drawerNav" data-init="initTypeListBox">
+    <ul data-role="listview" data-type="group">
+    	<li>資料來源
+	    	<ul>
+	    		<li><a href="http://unlimited.kptaipei.tw/" data-rel="external">柯P野生官網 API</a></li>
+	    		<li><a href="https://soundcloud.com/" data-rel="external">SoundCloud</a></li>
+	    	</ul>
+    	</li>
+    </ul>
+    <ul data-role="listview" data-type="group">
+    <li>歌單
+	    <ul class="typeListBox">
+	    </ul>
+    </li>
+    </ul>
+</div>
+<!-- head -->
+<div data-role="layout" data-id="layoutHead">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-role="button" data-rel="drawer" href="#drawerNav" data-icon="drawer-button" data-align="left"></a>
+            <span data-role="view-title"></span>
+            <a data-role="button" href="#play" data-icon="play-button" data-align="right"></a>
+        </div>
+    </header>
+</div>
+<!--  playList  -->
+<div data-role="view" id="list" data-layout="layoutHead" data-title="播放清單" data-show="initPlayList">
+    <ul data-role="listview" id="playList">
+    </ul>
+</div>
+<!--  play  -->
+<div data-role="view" id="play" data-title="目前播放" data-show="showPlay">
+		<header data-role="header">
+        <div data-role="navbar">
+            <a data-role="button" href="#list" data-icon="back-button" data-align="left"></a>
+            <!--<span data-role="view-title"></span>-->
+            <span id='playData' class='alignCenter'></span>
+        </div>
+    </header>
+    <div data-role="scroller" class="scroller-content">
+        <pre id='lyric'></pre>
+    </div>
+    <div data-role="footer">
+			<iframe id='playLink'></iframe>
+		</div>
+</div>
+
+
+
+<script type="text/x-kendo-template" id="navListTemplate">
+    <a href="\\#list?id=${id}">${name}</a>
+</script>
+
+<script type="text/x-kendo-template" id="playListTemplate">
+	<a href="\\#play?no=${no}">${no+1}. ${song_name} - ${groupname}</a>
+</script>
+
+<!--<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>-->
+<script type="text/javascript" src="js/getJson.js"></script>
+<script type="text/javascript" src="js/initView.js"></script>
+<script>
+//new kendo.mobile.Application(document.body);
+</script>
+</body>
+</html>
